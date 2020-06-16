@@ -17,13 +17,13 @@ class DefaultList:
             self.list.append(elem)
             
     def append(self, elem):
-        self.list.append(elem)
+        return self.list.append(elem)
         
     def remove(self, elem):
-        self.list.remove(elem)
+        return self.list.remove(elem)
         
     def insert(self, index, value):
-        self.list.insert(index, value)
+        return self.list.insert(index, value)
         
     def pop(self, index):
         return self.list.pop(index)
