@@ -1,0 +1,29 @@
+class DefaultList:
+    def __init__(self, list, default_value):
+        self.list = list
+        self.default_value = default_value
+        
+    def __getitem__(self, elem):
+    
+        if elem >= 0 and elem >= len(self.list):
+            return self.default_value
+        if elem < 0 and abs(elem) > len(self.list):
+            return self.default_value
+        result = list.__getitem__(self.list, elem)
+        return result
+                
+    def extend(self, elems):
+        for elem in elems:
+            self.list.append(elem)
+            
+    def append(self, elem):
+        self.list.append(elem)
+        
+    def remove(self, elem):
+        self.list.remove(elem)
+        
+    def insert(self, index, value):
+        self.list.insert(index, value)
+        
+    def pop(self, index):
+        return self.list.pop(index)
